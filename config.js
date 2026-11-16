@@ -1,1 +1,1 @@
-window.CFG={URL:"https://YOUR-PROJECT.supabase.co",KEY:"YOUR-ANON-PUBLIC-KEY"}; // anon key only, never the service-role key
+window.CFG={URL:"https://cjrtihiccqbhnecnjjli.supabase.co/rest/v1/",KEY:"sb_publishable_Ud4LZnHoiHOz417vsnHXjg_ZBfjITpb"}; // anon key only, never the service-role key
