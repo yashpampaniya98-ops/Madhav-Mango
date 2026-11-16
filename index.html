@@ -1,0 +1,127 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Madhav Mango Farm</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Inter:wght@400;600&family=Noto+Sans+Gujarati:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--g:#153D2B;--y:#F5B92E;--o:#E99B21;--c:#FFF9EB;--l:#527A45;--t:#202820}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font:16px/1.6 Inter,'Noto Sans Gujarati',sans-serif;color:var(--t);background:var(--c)}
+h1,h2,h3{font-family:'Cormorant Garamond','Noto Sans Gujarati',serif;margin:0;line-height:1.1}h2{font-size:clamp(32px,5vw,48px);color:var(--g)}
+.bar{background:var(--y);text-align:center;font-size:14px;padding:6px;color:var(--g);font-weight:600}
+header{position:sticky;top:0;z-index:20;background:var(--g);color:#fff}
+nav{max-width:1200px;margin:auto;display:flex;align-items:center;gap:20px;padding:12px 20px}
+.logo{font:700 26px 'Cormorant Garamond',serif;color:var(--y);margin-right:auto}nav a{color:#fff;text-decoration:none;font-size:15px}
+nav a:hover{color:var(--y)}button,.btn{font:600 15px inherit;font-family:inherit;border:0;border-radius:999px;padding:12px 24px;cursor:pointer;text-decoration:none;display:inline-block;transition:.2s}
+.pri{background:var(--y);color:var(--g)}.pri:hover{background:var(--o);transform:translateY(-2px)}.sec{background:transparent;color:#fff;border:1.5px solid #fff}.dk{background:var(--g);color:#fff}
+button:disabled{opacity:.45;cursor:not-allowed;transform:none}select{border-radius:8px;padding:6px;font:inherit}
+#cartBtn{background:none;color:#fff;padding:8px;position:relative;font-size:22px}#cnt{background:var(--y);color:var(--g);border-radius:99px;font-size:12px;padding:0 6px;position:absolute;top:-2px;right:-6px}
+.menu{display:none;background:none;color:#fff;font-size:24px;padding:4px 8px}
+.hero{min-height:88vh;display:grid;align-items:center;color:#fff;background:linear-gradient(90deg,rgba(21,61,43,.88),rgba(21,61,43,.35)),var(--hero,var(--g)) center/cover}
+.w{max-width:1200px;margin:auto;padding:0 20px}.hero h1{font-size:clamp(44px,8vw,92px);max-width:760px;animation:up .9s both}.hero p{font-size:20px;max-width:560px;opacity:.95;animation:up .9s .15s both}
+.hero .row{display:flex;gap:12px;flex-wrap:wrap;animation:up .9s .3s both}@keyframes up{from{opacity:0;transform:translateY(24px)}}
+section{padding:80px 0}.trust{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;text-align:center}.trust div{padding:24px;border-radius:20px;background:#fff;box-shadow:0 6px 24px #0001}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:32px}
+.card{background:#fff;border-radius:24px;overflow:hidden;box-shadow:0 8px 30px #0001;transition:.3s;display:flex;flex-direction:column}.card:hover{transform:translateY(-6px);box-shadow:0 16px 40px #0002}
+.ph{aspect-ratio:4/3;background:linear-gradient(135deg,var(--g),var(--l));color:#fff;display:grid;place-items:center;position:relative;cursor:pointer;font-size:14px}.ph img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.badge{position:absolute;top:12px;left:12px;background:var(--y);color:var(--g);border-radius:99px;padding:2px 12px;font-weight:600;z-index:1}.so{background:#fff;color:#a33;left:auto;right:12px}
+.cb{padding:20px;display:flex;flex-direction:column;gap:10px;flex:1}.price{font-size:22px;font-weight:600;color:var(--g)}.q{display:inline-flex;align-items:center;border:1.5px solid #ddd;border-radius:99px}.q button{background:none;padding:6px 14px;font-size:18px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}.dark{background:var(--g);color:#fff}.dark h2{color:var(--y)}
+.faq{background:#fff;border-radius:14px;padding:14px 18px;margin-top:10px}summary{cursor:pointer;font-weight:600}
+.ct{display:grid;grid-template-columns:1fr 1fr;gap:20px}.ct div{background:#fff;border-radius:20px;padding:24px;box-shadow:0 6px 24px #0001}.ct .btn{margin:6px 6px 0 0}
+footer{background:#0e2a1d;color:#cfd8cf;padding:40px 0;font-size:14px}footer a{color:var(--y)}.fg{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.ov{position:fixed;inset:0;background:#0007;z-index:40;display:none}.ov.on{display:block}.drawer{position:fixed;right:0;top:0;bottom:0;width:min(440px,100%);background:#fff;z-index:41;padding:20px;overflow:auto;transform:translateX(100%);transition:.3s}.drawer.on{transform:none}
+.mod{position:fixed;inset:5% 50% auto;transform:translateX(-50%);width:min(900px,94%);max-height:90vh;overflow:auto;background:#fff;border-radius:24px;z-index:41;display:none;padding:24px}.mod.on{display:block}
+.it{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid #eee;padding:12px 0}.x{background:none;color:#a33;padding:0}
+input,textarea{width:100%;padding:11px;border:1.5px solid #ddd;border-radius:10px;font:inherit;margin:4px 0 10px}input.bad{border-color:#c33}label{font-size:13px;font-weight:600}
+.thumbs{display:flex;gap:8px;margin-top:8px;overflow:auto}.thumbs img{width:70px;height:70px;object-fit:cover;border-radius:10px;cursor:pointer}
+#toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--g);color:#fff;padding:12px 22px;border-radius:99px;z-index:60;display:none}
+@media(max-width:800px){.grid,.fg,.two,.ct{grid-template-columns:1fr 1fr}.two,.ct{grid-template-columns:1fr}.trust{grid-template-columns:1fr}.menu{display:block}
+nav .lk{display:none;order:9;width:100%}nav.open .lk{display:block;padding:8px 0}nav{flex-wrap:wrap}section{padding:56px 0}.mod{inset:3% 50% auto}}
+@media(max-width:520px){.grid{gap:12px}.cb{padding:12px}.fg{grid-template-columns:1fr}}
+</style></head><body>
+<div class="bar" id="ann"></div>
+<header><nav id="nav"><span class="logo">Madhav Mango Farm</span>
+<a class="lk" href="#top" data-i="home"></a><a class="lk" href="#mangoes" data-i="mangoes"></a><a class="lk" href="#about" data-i="about"></a><a class="lk" href="#contact" data-i="contact"></a>
+<select id="lang" aria-label="Language"><option value="en">English</option><option value="gu">ગુજરાતી</option></select>
+<button id="cartBtn" aria-label="Cart">🛒<span id="cnt">0</span></button><button class="menu" onclick="nav.classList.toggle('open')" aria-label="Menu">☰</button></nav></header>
+<main id="top"><div class="hero" id="hero"><div class="w"><h1 id="tag"></h1><p data-i="sub"></p><div class="row" style="margin-top:28px">
+<a class="btn pri" href="#mangoes" data-i="explore"></a><a class="btn sec" id="waHero" target="_blank" rel="noopener" data-i="waOrder"></a></div></div></div>
+<section><div class="w trust"><div><h3 data-i="t1"></h3></div><div><h3 data-i="t2"></h3></div><div><h3 data-i="t3"></h3></div></div></section>
+<section id="mangoes" style="padding-top:0"><div class="w"><h2 data-i="collection"></h2><p data-i="boxnote"></p><div class="grid" id="grid"><p data-i="loading"></p></div></div></section>
+<section id="about" class="dark"><div class="w two"><div><h2 data-i="aboutH"></h2><p id="aboutT" style="font-size:18px"></p></div><div class="ph" style="border-radius:24px" id="aboutImg"></div></div></section>
+<section id="delivery"><div class="w"><h2 data-i="delH"></h2><p id="delT" style="max-width:720px"></p>
+<details class="faq"><summary data-i="f1q"></summary><p data-i="f1a"></p></details><details class="faq"><summary data-i="f2q"></summary><p data-i="f2a"></p></details></div></section>
+<section id="contact" style="padding-top:0"><div class="w"><h2 data-i="contact"></h2><div class="ct" style="margin-top:24px">
+<div><h3>Rupeshbhai</h3><p>+91 97123 06108<br><small data-i="primary"></small></p><a class="btn pri" target="_blank" rel="noopener" id="wa1">WhatsApp</a><a class="btn dk" href="tel:+919712306108" data-i="call"></a></div>
+<div><h3>Yash</h3><p>+91 98792 78980<br><small data-i="reference"></small></p><a class="btn pri" target="_blank" rel="noopener" id="wa2">WhatsApp</a><a class="btn dk" href="tel:+919879278980" data-i="call"></a></div></div></div></section></main>
+<footer><div class="w fg"><div><b style="color:#fff;font-size:18px">Madhav Mango Farm</b><p data-i="foot"></p></div><div><b data-i="links"></b><br><a href="#mangoes" data-i="mangoes"></a><br><a href="#about" data-i="about"></a><br><a href="#contact" data-i="contact"></a></div>
+<div><b data-i="mangoes"></b><br>A1 · A2 · A3</div><div><b data-i="contact"></b><br>+91 97123 06108<br>+91 98792 78980<br>English / ગુજરાતી</div></div>
+<div class="w" style="margin-top:20px">© <span id="yr"></span> Madhav Mango Farm. <span data-i="rights"></span></div></footer>
+<div class="ov" id="ov"></div><aside class="drawer" id="drawer" aria-label="Cart"></aside><div class="mod" id="mod"></div><div id="toast"></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script><script src="config.js"></script>
+<script>
+const $=id=>document.getElementById(id),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const T={en:{home:'Home',mangoes:'Our Mangoes',about:'About Our Farm',contact:'Contact',sub:'Naturally delicious Kesar mangoes, freshly sourced from our own farm in Gujarat.',explore:'Explore Our Mangoes',waOrder:'Order on WhatsApp',
+t1:'Directly From Our Farm',t2:'Three Quality Grades',t3:'Delivery Across Gujarat',collection:'Our Mango Collection',boxnote:'All grades are sold in 10 kg boxes only.',loading:'Loading…',
+aboutH:'From Our Farm to Your Home',delH:'Bringing Fresh Kesar Mangoes Across Gujarat',f1q:'How is my order confirmed?',f1a:'Sending the WhatsApp message does not confirm the order. We will confirm it with you on WhatsApp.',
+f2q:'Delivery time and charges?',f2a:'Please ask us on WhatsApp for delivery details to your area.',primary:'Primary WhatsApp order contact',reference:'Reference contact',call:'Call',foot:'Fresh Kesar mangoes from our own farm in Gujarat.',links:'Quick links',rights:'All rights reserved.',
+perBox:'per 10 kg box',soon:'Price coming soon',sold:'Sold Out',add:'Add to Cart',details:'View Details',boxes:'boxes',box:'box',total:'Total',weight:'Total weight',cart:'Your Cart',empty:'Your cart is empty.',clear:'Clear cart',cont:'Continue shopping',checkout:'Checkout',
+name:'Customer name',mobile:'Mobile number (10 digits)',addr:'Full delivery address',city:'City',district:'District',pin:'PIN code',note:'Order note (optional)',send:'Send order on WhatsApp',added:'Added to cart',fill:'Please fill the highlighted fields correctly.',
+after:'Your order is NOT confirmed until we confirm it with you on WhatsApp.',fallback:'If WhatsApp did not open, copy this message and send it to +91 97123 06108:',copy:'Copy',copied:'Copied',err:'Could not load products. Please refresh.',na:'Some items are unavailable or have no price yet.',back:'Back',noimg:'Photo coming soon',pending:'To be confirmed'},
+gu:{home:'હોમ',mangoes:'અમારી કેરી',about:'અમારા ફાર્મ વિશે',contact:'સંપર્ક',sub:'ગુજરાતમાં અમારા પોતાના ફાર્મમાંથી તાજી, કુદરતી રીતે સ્વાદિષ્ટ કેસર કેરી.',explore:'અમારી કેરી જુઓ',waOrder:'WhatsApp પર ઓર્ડર કરો',
+t1:'સીધા અમારા ફાર્મમાંથી',t2:'ત્રણ ગુણવત્તા ગ્રેડ',t3:'સમગ્ર ગુજરાતમાં ડિલિવરી',collection:'અમારી કેરીનો સંગ્રહ',boxnote:'બધા ગ્રેડ ફક્ત 10 કિલોના બોક્સમાં વેચાય છે.',loading:'લોડ થઈ રહ્યું છે…',
+aboutH:'અમારા ફાર્મથી તમારા ઘર સુધી',delH:'સમગ્ર ગુજરાતમાં તાજી કેસર કેરી',f1q:'મારો ઓર્ડર કેવી રીતે કન્ફર્મ થાય?',f1a:'WhatsApp સંદેશ મોકલવાથી ઓર્ડર કન્ફર્મ થતો નથી. અમે WhatsApp પર તમારી સાથે કન્ફર્મ કરીશું.',
+f2q:'ડિલિવરી સમય અને ચાર્જ?',f2a:'તમારા વિસ્તારની ડિલિવરી વિગતો માટે WhatsApp પર પૂછો.',primary:'મુખ્ય WhatsApp ઓર્ડર સંપર્ક',reference:'રેફરન્સ સંપર્ક',call:'કૉલ કરો',foot:'ગુજરાતમાં અમારા પોતાના ફાર્મની તાજી કેસર કેરી.',links:'ઝડપી લિંક્સ',rights:'સર્વ હક્ક સુરક્ષિત.',
+perBox:'10 કિલો બોક્સ દીઠ',soon:'કિંમત ટૂંક સમયમાં',sold:'સ્ટોકમાં નથી',add:'કાર્ટમાં ઉમેરો',details:'વિગતો જુઓ',boxes:'બોક્સ',box:'બોક્સ',total:'કુલ',weight:'કુલ વજન',cart:'તમારું કાર્ટ',empty:'તમારું કાર્ટ ખાલી છે.',clear:'કાર્ટ ખાલી કરો',cont:'ખરીદી ચાલુ રાખો',checkout:'ચેકઆઉટ',
+name:'ગ્રાહકનું નામ',mobile:'મોબાઇલ નંબર (10 અંક)',addr:'સંપૂર્ણ ડિલિવરી સરનામું',city:'શહેર',district:'જિલ્લો',pin:'પિન કોડ',note:'ઓર્ડર નોંધ (વૈકલ્પિક)',send:'WhatsApp પર ઓર્ડર મોકલો',added:'કાર્ટમાં ઉમેરાયું',fill:'કૃપા કરી માર્ક કરેલી વિગતો સાચી ભરો.',
+after:'અમે WhatsApp પર કન્ફર્મ ન કરીએ ત્યાં સુધી તમારો ઓર્ડર કન્ફર્મ નથી.',fallback:'જો WhatsApp ન ખુલે તો આ સંદેશ કૉપિ કરીને +91 97123 06108 પર મોકલો:',copy:'કૉપિ',copied:'કૉપિ થયું',err:'પ્રોડક્ટ લોડ ન થઈ. કૃપા કરી રિફ્રેશ કરો.',na:'કેટલીક વસ્તુઓ ઉપલબ્ધ નથી અથવા કિંમત નક્કી નથી.',back:'પાછા',noimg:'ફોટો ટૂંક સમયમાં',pending:'કન્ફર્મ થશે'}};
+const sb=supabase.createClient(CFG.URL,CFG.KEY);let lang=localStorage.lang||'en',P=[],S={},cart={};try{cart=JSON.parse(localStorage.cart||'{}')}catch{}
+const t=k=>T[lang][k]||k,q={},save=()=>{localStorage.cart=JSON.stringify(cart)};
+const fmt=n=>'₹'+Number(n).toLocaleString('en-IN'),wa=(n,m)=>`https://wa.me/${n}${m?'?text='+encodeURIComponent(m):''}`;
+const nm=p=>({A1:'A1 Premium',A2:'A2 Standard',A3:'A3 Value'}[p.grade]&&p.name),desc=p=>(lang==='gu'&&p.description_gu)||p.description_en||'';
+const ok=p=>p.available&&p.active&&p.price!=null;
+function toast(m){const e=$('toast');e.textContent=m;e.style.display='block';clearTimeout(e.t);e.t=setTimeout(()=>e.style.display='none',2600)}
+function applyLang(){document.documentElement.lang=lang;$('lang').value=lang;document.querySelectorAll('[data-i]').forEach(e=>e.textContent=t(e.dataset.i));
+ $('ann').textContent=S.announcement||'';$('tag').textContent=lang==='en'?(S.tagline||''):'કેસરની સોનેરી મીઠાશનો અનુભવ કરો';
+ $('aboutT').textContent=(lang==='gu'?S.about_gu:S.about_en)||'';$('delT').textContent=(lang==='gu'?S.delivery_gu:S.delivery_en)||'';render();renderCart()}
+function img(p){const i=p.images[0];return i?`<img src="${esc(i.image_url)}" alt="${esc(p.name)}" loading="lazy">`:`<span>${t('noimg')}</span>`}
+function render(){$('grid').innerHTML=P.map(p=>{q[p.grade]=q[p.grade]||1;return`<article class="card"><div class="ph" onclick="openP('${p.grade}')"><span class="badge">${p.grade}</span>${!p.available?`<span class="badge so">${t('sold')}</span>`:''}${img(p)}</div>
+<div class="cb"><h3 style="font-size:28px">${esc(p.name)}</h3><p style="margin:0;font-size:14px">${esc(desc(p))}</p><div class="price">${p.price!=null?fmt(p.price)+' <small style="font-size:13px;font-weight:400">'+t('perBox')+'</small>':t('soon')}</div>
+<div class="q" style="align-self:flex-start"><button onclick="qty('${p.grade}',-1)" aria-label="-">−</button><b>${q[p.grade]}</b><button onclick="qty('${p.grade}',1)" aria-label="+">+</button></div><small>${q[p.grade]*p.unit_weight} kg</small>
+<button class="pri" ${ok(p)?'':'disabled'} onclick="add('${p.grade}')">${p.available?t('add'):t('sold')}</button><button class="dk" onclick="openP('${p.grade}')">${t('details')}</button></div></article>`}).join('')}
+function qty(g,d){q[g]=Math.min(100,Math.max(1,(q[g]||1)+d));render();if($('mod').classList.contains('on'))openP(g,1)}
+function add(g){const p=P.find(x=>x.grade===g);if(!p||!ok(p))return;cart[g]=Math.min(100,(cart[g]||0)+(q[g]||1));save();renderCart();toast(t('added'))}
+function openP(g,keep){const p=P.find(x=>x.grade===g);q[g]=q[g]||1;const main=p.images[0]?.image_url;
+ $('mod').innerHTML=`<button class="x" style="float:right;font-size:28px" onclick="closeAll()">×</button><div class="two" style="gap:24px"><div><div class="ph" style="border-radius:18px">${main?`<img id="big" src="${esc(main)}" alt="${esc(p.name)}">`:`<span>${t('noimg')}</span>`}</div>
+<div class="thumbs">${p.images.map(i=>`<img src="${esc(i.image_url)}" alt="" onclick="big.src=this.src">`).join('')}</div></div><div><span class="badge" style="position:static">${p.grade}</span><h2>${esc(p.name)}</h2><p>${esc(desc(p))}</p>
+<div class="price">${p.price!=null?fmt(p.price)+' '+t('perBox'):t('soon')}</div><p>${p.available?'':'<b>'+t('sold')+'</b>'}${p.stock_note?esc(p.stock_note):''}</p>
+<div class="q"><button onclick="qty('${g}',-1)">−</button><b>${q[g]}</b><button onclick="qty('${g}',1)">+</button></div><p>${t('weight')}: ${q[g]*p.unit_weight} kg</p>
+<button class="pri" ${ok(p)?'':'disabled'} onclick="add('${g}')">${t('add')}</button> <a class="btn dk" target="_blank" rel="noopener" href="${wa(S.primary_whatsapp,`Hello Madhav Mango Farm! I am interested in ${p.name} (${q[g]} box = ${q[g]*p.unit_weight} kg).`)}">WhatsApp</a></div></div>`;
+ $('mod').classList.add('on');$('ov').classList.add('on')}
+function closeAll(){['mod','drawer','ov'].forEach(i=>$(i).classList.remove('on'))}$('ov').onclick=closeAll;
+function totals(){let w=0,a=0,pend=false,n=0;const L=[];for(const g in cart){const p=P.find(x=>x.grade===g);if(!p||!p.active)continue;n+=cart[g];w+=cart[g]*p.unit_weight;if(p.price==null)pend=true;else a+=cart[g]*p.price;L.push({p,b:cart[g]})}return{w,a,pend,n,L}}
+function renderCart(){const c=totals();$('cnt').textContent=c.n;
+ $('drawer').innerHTML=`<button class="x" style="float:right;font-size:28px" onclick="closeAll()">×</button><h2>${t('cart')}</h2>`+(!c.L.length?`<p>${t('empty')}</p><button class="pri" onclick="closeAll()">${t('cont')}</button>`:
+ c.L.map(({p,b})=>`<div class="it"><div><b>${esc(p.name)}</b><br><small>${p.price!=null?fmt(p.price)+' '+t('perBox'):t('soon')}<br>${b} ${b>1?t('boxes'):t('box')} · ${b*p.unit_weight} kg</small></div>
+ <div style="text-align:right"><div class="q"><button onclick="cq('${p.grade}',-1)">−</button><b>${b}</b><button onclick="cq('${p.grade}',1)">+</button></div><br><button class="x" onclick="rm('${p.grade}')">✕</button>${p.price!=null?'<br>'+fmt(b*p.price):''}</div></div>`).join('')+
+ `<p><b>${t('weight')}: ${c.w} kg</b></p><p class="price">${t('total')}: ${c.pend?t('pending'):fmt(c.a)}</p><button class="pri" onclick="co()">${t('checkout')}</button> <button class="dk" onclick="closeAll()">${t('cont')}</button> <button class="x" onclick="cart={};save();renderCart()">${t('clear')}</button>`)}
+function cq(g,d){cart[g]=Math.min(100,(cart[g]||0)+d);if(cart[g]<1)delete cart[g];save();renderCart()}function rm(g){delete cart[g];save();renderCart()}
+$('cartBtn').onclick=()=>{$('drawer').classList.add('on');$('ov').classList.add('on')};
+function co(){const c=totals();if(c.pend||c.L.some(({p})=>!ok(p))){toast(t('na'));return}
+ const f=(id,l,x='')=>`<label>${t(l)}</label><input id="${id}" ${x}>`;
+ $('mod').innerHTML=`<button class="x" style="float:right;font-size:28px" onclick="closeAll()">×</button><h2>${t('checkout')}</h2><div id="co">${f('cn','name')}${f('cp','mobile','inputmode="numeric"')}<label>${t('addr')}</label><textarea id="ca" rows="3"></textarea>${f('cc','city')}${f('cd','district')}${f('cz','pin','inputmode="numeric" maxlength="6"')}<label>${t('note')}</label><textarea id="cm" rows="2"></textarea>
+ <p><b>${t('weight')}: ${c.w} kg · ${t('total')}: ${fmt(c.a)}</b></p><p><small>${t('after')}</small></p><button class="pri" id="go" onclick="send()">${t('send')}</button></div>`;
+ $('mod').classList.add('on');$('drawer').classList.remove('on')}
+async function send(){const v=id=>$(id).value.trim(),ph=v('cp').replace(/\D/g,'').replace(/^91(?=\d{10}$)/,'');
+ const chk={cn:v('cn').length>1,cp:/^[6-9]\d{9}$/.test(ph),ca:v('ca').length>4,cc:!!v('cc'),cd:!!v('cd'),cz:/^\d{6}$/.test(v('cz'))};let bad=0;
+ for(const k in chk){$(k).classList.toggle('bad',!chk[k]);if(!chk[k])bad=1}if(bad){toast(t('fill'));return}
+ $('go').disabled=true;const c=totals();let w=c.w,a=c.a;
+ try{const{data,error}=await sb.rpc('place_order',{p_name:v('cn'),p_phone:ph,p_address:v('ca'),p_city:v('cc'),p_district:v('cd'),p_pin:v('cz'),p_note:v('cm'),p_items:c.L.map(({p,b})=>({grade:p.grade,boxes:b}))});
+  if(error)throw error;w=data.total_weight;a=data.total_amount}catch(e){console.warn(e);toast(t('na'));$('go').disabled=false;await load();return}
+ const m=`Hello Madhav Mango Farm!\n\nI would like to place an order.\n\nProducts:\n${c.L.map(({p,b})=>`${p.name} – ${b} ${b>1?'boxes':'box'} (${b*p.unit_weight} kg)`).join('\n')}\n\nTotal weight: ${w} kg\nTotal amount: ₹${a}\n\nCustomer name: ${v('cn')}\nMobile: ${ph}\nDelivery address: ${v('ca')}\nCity: ${v('cc')}\nDistrict: ${v('cd')}\nPIN code: ${v('cz')}\n${v('cm')?'Note: '+v('cm')+'\n':''}\nPlease confirm my order and delivery details.`;
+ const url=wa(S.primary_whatsapp,m);cart={};save();renderCart();window.open(url,'_blank');
+ $('co').innerHTML=`<p><b>${t('after')}</b></p><p>${t('fallback')}</p><textarea id="fm" rows="9" readonly>${esc(m)}</textarea><button class="dk" onclick="fm.select();navigator.clipboard?.writeText(fm.value);toast(t('copied'))">${t('copy')}</button> <a class="btn pri" target="_blank" rel="noopener" href="${url}">WhatsApp</a>`}
+async function load(){try{const[a,b]=await Promise.all([sb.from('products').select('*,images:product_images(image_url,display_order)').eq('active',true).order('grade'),sb.from('site_settings').select('*').eq('id',1).single()]);
+ if(a.error||b.error)throw 0;P=a.data.map(p=>({...p,images:(p.images||[]).sort((x,y)=>x.display_order-y.display_order)}));S=b.data;
+ $('wa1').href=wa(S.primary_whatsapp,'Hello Rupeshbhai!');$('wa2').href=wa(S.secondary_whatsapp,'Hello Yash!');$('waHero').href=wa(S.primary_whatsapp,'Hello Madhav Mango Farm! I would like to order Kesar mangoes.');
+ if(S.hero_image_url)$('hero').style.setProperty('--hero',`url("${S.hero_image_url.replace(/"/g,'%22')}")`);applyLang()}catch{$('grid').innerHTML=`<p>${t('err')}</p>`}}
+$('lang').onchange=e=>{lang=e.target.value;localStorage.lang=lang;applyLang()};$('yr').textContent=new Date().getFullYear();document.querySelectorAll('nav .lk').forEach(a=>a.onclick=()=>nav.classList.remove('open'));applyLang();load();
+</script></body></html>
